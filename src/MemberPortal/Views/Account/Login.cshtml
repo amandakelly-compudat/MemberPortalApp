@@ -1,0 +1,63 @@
+﻿@using System.Collections.Generic
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@model LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<h2>@ViewData["Title"].</h2>
+<link href="~/css/site.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<style>
+    body {
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://static1.squarespace.com/static/531e2c3ee4b0a6495db69257/570d7247c2ea51b9b79ab568/5798fae2b8a79b3cdefaad1b/1469646689016/roycollinsconstruction8.jpg?format=1500w) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="Absolute-Center is-Responsive">
+            <div id="title-container">Log in for Member Access</div>
+            <hr class="custom-hr" />
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+
+                <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="Email" class="form-control" placeholder="Email" />
+                    </div>
+
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input asp-for="Password" class="form-control" placeholder="Password" />
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-submit btn-block">Log In</button>
+                        <br />
+                    </div>
+                    <hr class="custom-hr" />
+                    <h6 style="text-align:center;">By continuing you agree to our <a href="#">Conditions of Use</a> of the MemberTrack Member Portal.</h6>
+                    <hr class="custom-hr" />
+                    <h5 style="text-align:center; font-weight:300;">Forget password or need to register?</h5>
+                    <div class="form-group text-center">
+                        <a asp-action="ForgotPassword">Reset Password</a>&nbsp;|&nbsp;<a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

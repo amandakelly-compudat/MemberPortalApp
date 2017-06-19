@@ -1,0 +1,190 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MemberPortal.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    Layout = "_Layout2";
+}
+<div class="content-header">
+
+    <!-- HEADER -->
+    <section class="content-header">
+        <h1>
+            Dependents
+            <small>(Details + Add Dependents)</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a asp-area="" asp-controller="Profile" asp-action="Index"><i class="fa fa-dashboard"></i> Member Portal</a></li>
+            <li class="active">Dependents</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <!-- DEPENDENT DETAILS -->
+        <div class="row">
+
+            <div class="col-md-9">
+                <div class="box box-default">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Dependent No.</th>
+                                    <th>Name</th>
+                                    <th>Date of Birth</th>
+                                    <th>Relationship</th>
+                                    <th>Marital Status</th>
+                                    <th>Beneficiary %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01</td>
+                                    <td>John Doe</td>
+                                    <td>02/01/1950</td>
+                                    <td>Self</td>
+                                    <td>Married</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>02</td>
+                                    <td>Jane Doe</td>
+                                    <td>05/29/1957</td>
+                                    <td>Wife</td>
+                                    <td>Married</td>
+                                    <td>0.70</td>
+                                </tr>
+                                <tr>
+                                    <td>03</td>
+                                    <td>Dan Doe</td>
+                                    <td>11/22/1985</td>
+                                    <td>Son</td>
+                                    <td>Married</td>
+                                    <td>0.10</td>
+                                </tr>
+                                <tr>
+                                    <td>04</td>
+                                    <td>Sam Doe</td>
+                                    <td>04/03/1987</td>
+                                    <td>Son</td>
+                                    <td>Single</td>
+                                    <td>0.10</td>
+                                </tr>
+                                <tr>
+                                    <td>05</td>
+                                    <td>Jen Doe</td>
+                                    <td>12/16/1989</td>
+                                    <td>Daughter</td>
+                                    <td>Single</td>
+                                    <td>0.10</td>
+                                </tr>
+                                <tr>
+                                    <td>06</td>
+                                    <td>Jane Doe</td>
+                                    <td>12/16/1989</td>
+                                    <td>Daughter</td>
+                                    <td>Married</td>
+                                    <td>0.10</td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="small-box bg-light-blue-active">
+                    <div class="inner is-Responsive">
+                        <h4 style="padding: 10px;">
+                            Need to add
+                            <br />new dependent(s)?
+                        </h4>
+                        <h5 style="padding: 10px;">Submit your infotmation<br />by clicking "add dependent" below.</h5>
+
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                    <div class="small-box-footer bg-light-blue" style="height: 123px;">
+                        <div class="box-widget" style="padding-top:35px;">
+                            <button class="btn btn-primary bg-light-blue-active" style="width: 225px;" data-toggle="modal" data-target="#myModal">ADD DEPENDENT</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- placeholder for something else? -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box">
+                    <div class="box-body" style="height:800px;">
+                        <div class="box-header"></div>
+
+                        <div style="padding-left: 20px;">
+                            <h4>Add Dependent History</h4>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- DEPENDENTS MODAL -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add Dependent(s)</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="control-label">First Name:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Last Name:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Date of Birth:</label>
+                                <input type="date" class="form-control" placeholder="mm/dd/yyyy">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Relationship:</label>
+                                <input type="text" class="form-control" placeholder="Wife/Husband, Son, Daughter, etc.">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Marital Status:</label>
+                                <select class="form-control">
+                                    <option>Single</option>
+                                    <option>Married</option>
+                                    <option>Divorced</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Beneficiary % (optional):</label>
+                                <input type="text" class="form-control" placeholder="0.70, 0.50, etc.">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

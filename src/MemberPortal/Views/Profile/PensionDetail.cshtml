@@ -1,0 +1,247 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MemberPortal.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    Layout = "_Layout2";
+}
+<div class="content-header">
+
+    <!-- HEADER -->
+    <section class="content-header">
+        <h1>
+            Pension Details
+            <small>(Pension Info + Credit History)</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a asp-area="" asp-controller="Profile" asp-action="Index"><i class="fa fa-dashboard"></i> Member Portal</a></li>
+            <li class="active">Pension Details</li>
+        </ol>
+    </section>
+
+    <section class="content">
+
+        <!-- PENSION OVERVIEW -->
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="box" style="padding-top:20px;">
+                    <div class="box-header with-border">
+                            <div class="table-responsive">
+                                <table class="table table-striped" style="font-size: 16px;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-weight: bold;  padding-left: 10%">Pension Credits:</td>
+                                            <td>8.60</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;  padding-left: 10%">Vesting Credits:</td>
+                                            <td>5.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;  padding-left: 10%">Bank Hours:</td>
+                                            <td>8645</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;  padding-left: 10%">Beneficary:</td>
+                                            <td>Jane Doe</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;  padding-left: 10%">Retire Date:</td>
+                                            <td>06/01/2016</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;  padding-left: 10%">Monlthy Amt:</td>
+                                            <td>562.50</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;  padding-left: 10%">Type:</td>
+                                            <td>Normal</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                       
+                    </div>
+                </div>
+
+            <!-- RETIREMENT WIDGET -->
+            <div class="col-md-5">
+                <div class="small-box bg-light-blue-active">
+                    <div class="inner is-Responsive">
+                        <h3 style="padding: 5px;">
+                            Wondering what
+                            <br />retirement will look like?
+                        </h3>
+                        <h4 style="padding: 5px;">Find out today!<br />Calculate your pension with a retirement date.*</h4>
+
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-calculator"></i>
+                    </div>
+                    <div class="small-box-footer bg-light-blue" style="height: 74px;">
+                        <div class="box-widget" style="padding-top: 35px;">
+                            <button class="btn btn-primary bg-light-blue-active" style="width: 250px;" data-toggle="modal" data-target="#calcModal">CALCULATE HERE</button>
+                        </div>
+                    </div>
+                    <div class="small-box-footer bg-light-blue" style="height: 85px;">
+                        <small style="font-size:9px;">
+                           <br />
+                             *This is a SIMULATION ONLY based on your records.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RETIREMENT MODAL - CALC -->
+        <div class="modal fade" id="calcModal" tabindex="-1" role="dialog" aria-labelledby="calcModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="calcModalLabel">Calculate Retirement & Pension</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <input type="date" class="form-control" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <select class="form-control">
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Calculate</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PENSION DETAILS -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box" style="height:725px;">
+                    <div class="box-header">
+                        <h3 class="box-title">Pension Credit History</h3>
+                        <small>(Snapshot)</small>
+                        <div class="box-tools pull-right">
+                            <a asp-area="" asp-controller="Profile" asp-action="PensionCreditHistory" class="btn btn-box-tool"><i class="fa fa-arrow-circle-right"></i> See All</a>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Hours</th>
+                                    <th>Contribution Amount</th>
+                                    <th>Pension Credits</th>
+                                    <th>Vesting Credits</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2010</td>
+                                    <td>1920</td>
+                                    <td>6720.00</td>
+                                    <td>1.9</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2011</td>
+                                    <td>2000</td>
+                                    <td>7500.00</td>
+                                    <td>2.0</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2012</td>
+                                    <td>900</td>
+                                    <td>3420.00</td>
+                                    <td>0.9</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2013</td>
+                                    <td>1600</td>
+                                    <td>6080.00</td>
+                                    <td>1.6</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2014</td>
+                                    <td>1225</td>
+                                    <td>4777.50</td>
+                                    <td>1.2</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2015</td>
+                                    <td>1225</td>
+                                    <td>4000.00</td>
+                                    <td>1.0</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2016</td>
+                                    <td>1920</td>
+                                    <td>6720.00</td>
+                                    <td>1.9</td>
+                                    <td>1.00</td>
+                                </tr>
+                                    
+                            </tbody>
+                            @*<tfoot>
+                                <tr>
+                                    <th>Remit No.</th>
+                                    <th>Data Received</th>
+                                    <th>Employer</th>
+                                    <th>Work Month</th>
+                                    <th>Hours</th>
+                                    <th>Pension Cont.</th>
+                                    <th>Annuity Cont.</th>
+                                    <th>Health Cont.</th>
+                                </tr>
+                            </tfoot>*@
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+     </section>
+</div>

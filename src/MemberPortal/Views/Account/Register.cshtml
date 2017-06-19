@@ -1,0 +1,77 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>@ViewData["Title"].</h2>
+
+<link href="~/css/site.css" rel="stylesheet" />
+<div class="wrapper-register">
+    <style>
+        body {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://static.wixstatic.com/media/133082_d034854b18a141188f5edb4c6adfc740.jpg_srz_1440_957_85_22_0.50_1.20_0.00_jpg_srz) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="Absolute-Center is-Responsive">
+                <div id="title-container">Register for Member Access</div>
+                <hr class="custom-hr" />
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+
+                    <form asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+
+                        @*<span asp-validation-for="FirstName" class="text-danger"></span>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input asp-for="FirstName" class="form-control" placeholder="First Name" />
+                            </div>
+
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+                            </div>*@
+
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input asp-for="Email" class="form-control" placeholder="Email" />
+                        </div>
+
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input asp-for="Password" class="form-control" placeholder="Password" />
+                        </div>
+
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-submit btn-block">Register</button>
+                            <div class="checkbox text-center">
+                                <br />
+                                <input type="checkbox">I agree to the <a href="#">Terms and Conditions</a>
+                            </div>
+                        </div>
+                        <hr class="custom-hr" />
+                        <div class="form-group text-center">
+                            <a asp-action="ForgotPassword">Forgot Password</a>&nbsp;|&nbsp;<a asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]">Log In</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }

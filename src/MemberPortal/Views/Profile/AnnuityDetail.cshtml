@@ -1,0 +1,167 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MemberPortal.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    Layout = "_Layout2";
+}
+<div class="content-header">
+
+    <!-- HEADER -->
+    <section class="content-header">
+        <h1>
+            Annuity Details
+            <small>(Full Detail)</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a asp-area="" asp-controller="Profile" asp-action="Index"><i class="fa fa-dashboard"></i> Member Portal</a></li>
+            <li class="active">Annuity Details</li>
+        </ol>
+    </section>
+
+    <section class="content">
+
+        <!-- ANNUITY OVERVIEW-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="box-header"></div>
+                        <div class="col-md-6">
+                            <table class="table table-striped table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td style="font-weight: bold;">Annuity Available:</td>
+                                        <td>10543.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">Payments:</td>
+                                        <td>10000.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table table-striped table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td style="font-weight: bold;">Valuation As of:</td>
+                                        <td>01/01/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">Beneficiary:</td>
+                                        <td>Jane Doe</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--ANNUITY DETAILS -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Begin Balance</th>
+                                    <th>Contributions</th>
+                                    <th>Distribution</th>
+                                    <th>Admin. Fee</th>
+                                    <th>Interest</th>
+                                    <th>End Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2010</td>
+                                    <td>0.00</td>
+                                    <td>3840.00</td>
+                                    <td>0.00</td>
+                                    <td>50.00</td>
+                                    <td>125.52</td>
+                                    <td>3912.52</td>
+                                </tr>
+                                <tr>
+                                    <td>2011</td>
+                                    <td>3912.52</td>
+                                    <td>4000.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>398.29</td>
+                                    <td>8310.81</td>
+                                </tr>
+                                <tr>
+                                    <td>2012</td>
+                                    <td>8310.81</td>
+                                    <td>1800.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>298.18</td>
+                                    <td>10105.99</td>
+                                </tr>
+                                <tr>
+                                    <td>2013</td>
+                                    <td>10105.99</td>
+                                    <td>3200.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>682.01</td>
+                                    <td>13988.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2014</td>
+                                    <td>13988.00</td>
+                                    <td>2450.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>982.15</td>
+                                    <td>17420.15</td>
+                                </tr>
+                                <tr>
+                                    <td>2015</td>
+                                    <td>17420.15</td>
+                                    <td>2000.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>827.38</td>
+                                    <td>20543.50</td>
+                                </tr>
+                                <tr>
+                                    <td>2016</td>
+                                    <td>20543.50</td>
+                                    <td>3000.00</td>
+                                    <td>0.00</td>
+                                    <td>10000.00</td>
+                                    <td>0.00</td>
+                                    <td>10543.50</td>
+                                </tr>
+                            </tbody>
+                            @*<tfoot>
+                <tr>
+                    <th>Remit No.</th>
+                    <th>Data Received</th>
+                    <th>Employer</th>
+                    <th>Work Month</th>
+                    <th>Hours</th>
+                    <th>Pension Cont.</th>
+                    <th>Annuity Cont.</th>
+                    <th>Health Cont.</th>
+                </tr>
+            </tfoot>*@
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+     </section>
+</div>

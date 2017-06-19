@@ -1,0 +1,211 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MemberPortal.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    Layout = "_Layout2";
+}
+<div class="content-header">
+
+    <!-- HEADER -->
+    <section class="content-header">
+        <h1>
+            Pension Credit History
+            <small>(Full Detail)</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a asp-area="" asp-controller="Profile" asp-action="Index"><i class="fa fa-dashboard"></i> Member Portal</a></li>
+            <li><a asp-area="" asp-controller="Profile" asp-action="PensionDetail">Pension Overview</a></li>
+            <li class="active">Pension Credit History</li>
+        </ol>
+    </section>
+
+    <section class="content">
+
+        <!-- MAIN CONTENT: ROW 1 (Pension Detail/INFO) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body" style="height:1050px;">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Hours</th>
+                                    <th>Contribution Amount</th>
+                                    <th>Pension Credits</th>
+                                    <th>Vesting Credits</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2010</td>
+                                    <td>1920</td>
+                                    <td>6720.00</td>
+                                    <td>1.9</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2011</td>
+                                    <td>2000</td>
+                                    <td>7500.00</td>
+                                    <td>2.0</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2012</td>
+                                    <td>900</td>
+                                    <td>3420.00</td>
+                                    <td>0.9</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2013</td>
+                                    <td>1600</td>
+                                    <td>6080.00</td>
+                                    <td>1.6</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2014</td>
+                                    <td>1225</td>
+                                    <td>4777.50</td>
+                                    <td>1.2</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2015</td>
+                                    <td>1225</td>
+                                    <td>4000.00</td>
+                                    <td>1.0</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2016</td>
+                                    <td>1920</td>
+                                    <td>6720.00</td>
+                                    <td>1.9</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2010</td>
+                                    <td>1920</td>
+                                    <td>6720.00</td>
+                                    <td>1.9</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2011</td>
+                                    <td>2000</td>
+                                    <td>7500.00</td>
+                                    <td>2.0</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2012</td>
+                                    <td>900</td>
+                                    <td>3420.00</td>
+                                    <td>0.9</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2013</td>
+                                    <td>1600</td>
+                                    <td>6080.00</td>
+                                    <td>1.6</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2014</td>
+                                    <td>1225</td>
+                                    <td>4777.50</td>
+                                    <td>1.2</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2015</td>
+                                    <td>1225</td>
+                                    <td>4000.00</td>
+                                    <td>1.0</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2016</td>
+                                    <td>1920</td>
+                                    <td>6720.00</td>
+                                    <td>1.9</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2010</td>
+                                    <td>1920</td>
+                                    <td>6720.00</td>
+                                    <td>1.9</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2011</td>
+                                    <td>2000</td>
+                                    <td>7500.00</td>
+                                    <td>2.0</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2012</td>
+                                    <td>900</td>
+                                    <td>3420.00</td>
+                                    <td>0.9</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2013</td>
+                                    <td>1600</td>
+                                    <td>6080.00</td>
+                                    <td>1.6</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2014</td>
+                                    <td>1225</td>
+                                    <td>4777.50</td>
+                                    <td>1.2</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2015</td>
+                                    <td>1225</td>
+                                    <td>4000.00</td>
+                                    <td>1.0</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2016</td>
+                                    <td>1920</td>
+                                    <td>6720.00</td>
+                                    <td>1.9</td>
+                                    <td>1.00</td>
+                                </tr>
+
+                            </tbody>
+                            @*<tfoot>
+                <tr>
+                    <th>Remit No.</th>
+                    <th>Data Received</th>
+                    <th>Employer</th>
+                    <th>Work Month</th>
+                    <th>Hours</th>
+                    <th>Pension Cont.</th>
+                    <th>Annuity Cont.</th>
+                    <th>Health Cont.</th>
+                </tr>
+            </tfoot>*@
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+     </section>
+</div>
