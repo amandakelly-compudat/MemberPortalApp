@@ -7,7 +7,8 @@ namespace MemberPortal.Models
 {
     public class Member
     {
-        public int Id { get; set; }
+        public int MemberID { get; set; }
+        public int Ssn { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public DateTime Birthdate { get; set; }
@@ -17,6 +18,10 @@ namespace MemberPortal.Models
         public string Local { get; set; }
         public string Employer { get; set; }
         public DateTime Retired { get; set; }
-        public string Medial { get; set; }
+        public string Medical { get; set; }
+        public string ProfileImage { get; set; }
+
+        //public virtual ICollection<Pension> Pensions { get; set; }
     }
+
 }
