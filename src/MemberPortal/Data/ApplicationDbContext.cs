@@ -15,7 +15,7 @@ namespace MemberPortal.Data
 
         }
         public DbSet<Member> Members { get; set; }
-        //public DbSet<Pension> Pensions { get; set; }
+        public DbSet<Pension> Pension { get; set; }
     }
 
 }
