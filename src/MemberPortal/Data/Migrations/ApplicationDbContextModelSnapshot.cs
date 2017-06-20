@@ -73,6 +73,32 @@ namespace MemberPortal.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("MemberPortal.Models.Dependent", b =>
+                {
+                    b.Property<int>("DependentID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<decimal>("BeneficiaryAmt");
+
+                    b.Property<DateTime>("BirthDate");
+
+                    b.Property<string>("MaritalStatus");
+
+                    b.Property<int>("MemberID");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Relationship");
+
+                    b.Property<DateTime>("RequestDate");
+
+                    b.Property<string>("Status");
+
+                    b.HasKey("DependentID");
+
+                    b.ToTable("Dependents");
+                });
+
             modelBuilder.Entity("MemberPortal.Models.Member", b =>
                 {
                     b.Property<int>("MemberID")
