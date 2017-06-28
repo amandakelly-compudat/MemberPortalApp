@@ -15,12 +15,6 @@
     <None Update="wwwroot\**\*">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
-    <Content Include="Views\**\*">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="web.config" CopyToPublishDirectory="PreserveNewest" />
-    <Content Include="appsettings.json" CopyToPublishDirectory="PreserveNewest" />
-    <Content Include="appsettings.production.json" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
