@@ -5,13 +5,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using MemberPortal.Data;
 
-namespace MemberPortal.Data.Migrations
+namespace MemberPortal.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170619204352_Version3MemberPortal")]
-    partial class Version3MemberPortal
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.3")
@@ -72,6 +71,32 @@ namespace MemberPortal.Data.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("MemberPortal.Models.Dependent", b =>
+                {
+                    b.Property<int>("DependentID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<decimal>("BeneficiaryAmt");
+
+                    b.Property<DateTime>("BirthDate");
+
+                    b.Property<string>("MaritalStatus");
+
+                    b.Property<int>("MemberID");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Relationship");
+
+                    b.Property<DateTime>("RequestDate");
+
+                    b.Property<string>("Status");
+
+                    b.HasKey("DependentID");
+
+                    b.ToTable("Dependents");
                 });
 
             modelBuilder.Entity("MemberPortal.Models.Member", b =>
