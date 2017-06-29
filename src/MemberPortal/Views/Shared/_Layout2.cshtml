@@ -99,7 +99,7 @@
                                     <img src="~/dist/img/user1-128x128.jpg" class="img-circle" alt="User Image">
                                     <p>
                                         @UserManager.GetUserName(User)
-                                        <small>Member since Nov. 2012</small>
+                                        <small>Member since 1990</small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -171,7 +171,7 @@
                             <ul class="treeview-menu">
                                 <li><a asp-area="" asp-controller="Profile" asp-action="PensionDetail">Pension Overview</a></li>
                                 <li><a asp-area="" asp-controller="Profile" asp-action="PensionCreditHistory">Pension Credit History</a></li>
-                                <li><a href="#">Retirement Calculator</a></li>
+                                <li><a asp-area="" asp-controller="Profile" asp-action="PensionDetail">Retirement Calculator</a></li>
                             </ul>
                         </a>
                     </li>
