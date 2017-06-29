@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="~/dist/css/skins/_all-skins.min.css" />
         <link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
         <link href="~/plugins/datatables/jquery.dataTables.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" />
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -40,6 +41,7 @@
         <link rel="stylesheet" href="~/dist/css/skins/_all-skins.min.css" />
         <link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
         <link href="~/plugins/datatables/jquery.dataTables.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" />
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -266,6 +268,9 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+       
     </environment>
 
     <environment names="Staging,Production">
@@ -288,9 +293,16 @@
     <script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
     <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="~/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
     <script src="~/js/wow.js"></script>
 
     @RenderSection("scripts", required: false)
+
+    <script>
+            $(document).ready(function () {
+        $('#example').DataTable();
+    });
+    </script>
 
 </body>
 </html>
